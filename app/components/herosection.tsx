@@ -80,7 +80,7 @@ export default function Hero() {
             <span>Shouldn’t Be So Hard</span>
           </h1>
           <p className="text-gray-600 mb-6">
-            Keto Bars may melt a bit in transit, especially if you live in a
+            Banibaizabeh may melt a bit in transit, especially if you live in a
             warmer climate. This happens because we dont use any gums or filler
             ingredients like dextrin or inulin.
           </p>
