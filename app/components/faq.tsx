@@ -96,7 +96,7 @@ const FAQ: React.FC = () => {
     {
       question: "Apa saja produk kerupuk yang tersedia di Bani Baiza Beh?",
       answer:
-        "Kami menyediakan berbagai macam kerupuk berkualitas tinggi seperti Gurilem yang renyah dengan rasa original, pedas sedang, dan pedas banget. Ada juga Seblak Level dengan berbagai tingkat kepedasan (level 3, 5, 7, dan 10), serta Pangsit yang renyah cikruh dengan pilihan rasa original, pedas sedang, dan pedas banget. Semua produk dibuat dengan bahan-bahan segar dan rempah-rempah pilihan.",
+        "Kami menyediakan berbagai macam kerupuk berkualitas tinggi seperti Gurilem yang renyah dengan rasa original, pedas sedang, dan pedas banget. Ada juga Seblak Level dengan berbagai tingkat kepedasan (level 3, 5, 7, dan 10), Blaktek yang renyah cikruh dengan pilihan rasa original, pedas sedang, dan pedas banget, serta ada juga basreng cemilan khas Jawa barat. Semua produk dibuat dengan bahan-bahan segar dan rempah-rempah pilihan.",
     },
     {
       question: "Berapa ukuran kemasan yang tersedia dan bagaimana cara pemesanan?",
