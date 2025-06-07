@@ -100,9 +100,9 @@ const Footer: React.FC = () => {
   ]
 
   const socialLinks: SocialLink[] = [
-    { name: "Shoope", icon: FaShoppingCart, href: "#", color: "hover:text-blue-400" },
-    { name: "Tiktok", icon: FaTiktok, href: "#", color: "hover:text-sky-400" },
-    { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-400" },
+    { name: "Shoope", icon: FaShoppingCart, href: "https://id.shp.ee/YnfaZXp", color: "hover:text-blue-400" },
+    { name: "Tiktok", icon: FaTiktok, href: "#", color: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/produk8483_h?igsh=MTduNTdtMTFuaWFueg==", color: "hover:text-pink-400" },
   ]
 
   return (
