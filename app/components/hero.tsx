@@ -502,12 +502,12 @@ const Hero = () => {
         <div className="flex flex-col items-center justify-center text-center space-y-8 max-w-4xl mx-auto">
           {/* Header Badges */}
           <div className="flex items-center justify-center flex-wrap gap-3">
-            
-            <div className="inline-flex items-center px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-gradient-to-r from-neutral-900 to-neutral-800 text-amber-400 font-medium text-sm backdrop-blur-sm border border-neutral-700/50 shadow-xl">
-              <Utensils className="w-4 h-4 mr-2" />
-              Nikmatnya Sederhana, Indahnya Bersama
-            </div>
-          </div>
+  <div className="inline-flex items-center px-4 py-2 lg:px-5 lg:py-2.5 rounded-full bg-gradient-to-r from-neutral-900 to-neutral-800 text-amber-400 font-medium text-xs sm:text-sm backdrop-blur-sm border border-neutral-700/50 shadow-xl">
+    <Utensils className="w-4 h-4 mr-2" />
+    Nikmatnya Sederhana, Indahnya Bersama
+  </div>
+</div>
+
 
           {/* Main Heading */}
           <h1
