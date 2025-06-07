@@ -402,7 +402,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 text-neutral-600 dark:text-neutral-400 text-sm">
               <span>© {currentYear} Made with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-              <span>by YourName. All rights reserved.</span>
+              <span>by Banibaizabeh. All rights reserved.</span>
             </div>
           </div>
         </div>
