@@ -160,7 +160,7 @@ const Product = () => {
     id: 5,
     title: "Seblak",
     description:
-      "Hidangan favorit Bandung dengan kerupuk basah bertekstur kenyal, disajikan dalam kuah pedas gurih dengan aroma kencur yang kuat.",
+      "Hidangan favorit Bandung dengan kerupuk bertekstur renyah, disajikan dalam berbagai level bumbu pedas gurih dengan aroma kencur yang kuat.",
     image: "/seblak.jpeg",
     icon: Soup,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
@@ -376,7 +376,7 @@ const Product = () => {
         <div ref={titleRef} className="text-center mb-16">
           <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 mb-6">
             <Palette className="w-4 h-4 mr-2" />
-            Product Kami
+            Produk Kami
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
             Produk{" "}

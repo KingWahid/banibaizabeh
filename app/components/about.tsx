@@ -640,7 +640,7 @@ const stats = [
                 </h2>
                 <p className="text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
                   Kami berkomitmen untuk memberikan layanan terbaik dengan standar kualitas tertinggi. Berikut adalah
-                  beberapa alasan mengapa ribuan pembeli membeli produk Banibaizabeh:
+                  beberapa alasan mengapa pelanggan membeli produk Banibaizabeh:
                 </p>
               </div>
 
