@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
   const quickLinks: QuickLink[] = [
     { name: "Beranda", href: "#home" },
     { name: "Tentang", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Produk", href: "#produk" },
     { name: "FAQ", href: "#faq" },
   ]
 
@@ -375,8 +375,18 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </div>
-
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6254518797928!2d107.58719377403769!3d-7.053221369115184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ebd1adeb31b3%3A0x8224bf9e20340bb5!2sCiapus!5e0!3m2!1sid!2sid!4v1750092878201!5m2!1sid!2sid"
+            width="200%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
+        
+
 
         {/* Social Links & Copyright */}
         <div className="pt-8 border-t border-white/10">
@@ -397,6 +407,7 @@ const Footer: React.FC = () => {
                 )
               })}
             </div>
+            
 
             {/* Copyright */}
             <div className="flex items-center space-x-2 text-neutral-600 dark:text-neutral-400 text-sm">

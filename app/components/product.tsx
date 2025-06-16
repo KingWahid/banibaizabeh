@@ -17,12 +17,15 @@ if (typeof window !== "undefined") {
 interface ProductItem {
   id: number;
   title: string;
+  price: string;
   description: string;
   image: string;
   icon: LucideIcon;
   tiktok: string;
   shoope: string;
-  category: string;
+  sales: string;
+  variants: string[]; // contoh: ["Original", "Pedes Sedang", "Pedes Bingit"]
+  size: string;       // contoh: "250g"
 }
 
 // Interface untuk props ProjectCard
@@ -115,57 +118,72 @@ const Product = () => {
   {
     id: 1,
     title: "Basreng",
+    price: "Rp. 7000",
     description:
       "Camilan khas Jawa Barat berbahan dasar bakso ikan atau ayam yang diiris tipis, digoreng kering hingga renyah, lalu dibumbui dengan rempah pedas yang khas.",
     image: "/basreng.jpeg",
     icon: Flame,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
-    category: "Camilan",
+    sales: "Best Seller",
+    variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
+    size: "250g",
   },
   {
     id: 2,
     title: "Gurilem",
+    price: "Rp. 7000",
     description:
       "Kerupuk gurih renyah berbahan tepung tapioka yang dibumbui khas. Nama 'Gurilem' adalah singkatan dari 'gurih dan pelem (lembut)', sesuai dengan rasa yang ditawarkan.",
     image: "/gurilem.jpeg",
     icon: Drumstick,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
-    category: "Camilan",
+    sales: "Best Seller",
+    variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
+    size: "250g",
   },
   {
     id: 3,
     title: "Blaktek",
+    price: "Rp. 7000",
     description:
       "Kombinasi unik dari seblak pedas dan lotek khas Jawa Barat. Cita rasa pedas dan gurih berpadu dalam hidangan yang kaya bumbu dan sayuran.",
     image: "/blaktek.jpeg",
     icon: Leaf,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
-    category: "Inovasi Kuliner",
+    sales: "",
+    variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
+    size: "250g",
   },
   {
     id: 4,
     title: "Lumpia",
+    price: "Rp. 7000",
     description:
       "Camilan goreng dengan kulit lumpia renyah dan isian berbumbu rempah pedas yang menggoda. Cocok dinikmati kapan saja.",
     image: "/lumpiah.jpeg",
     icon: Sandwich,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
-    category: "Camilan",
+    sales: "",
+    variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
+    size: "250g",
   },
   {
     id: 5,
-    title: "Seblak",
+    title: "Seblak level",
+    price: "Rp. 7000",
     description:
       "Hidangan favorit Bandung dengan kerupuk bertekstur renyah, disajikan dalam berbagai level bumbu pedas gurih dengan aroma kencur yang kuat.",
     image: "/seblak.jpeg",
     icon: Soup,
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
-    category: "Street Food",
+    sales: "",
+    variants: ["3", "7", "10"],
+    size: "250g",
   },
 ]
 
@@ -199,30 +217,47 @@ const Product = () => {
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* Category */}
+                {/* sales */}
                 <div className="absolute top-4 right-4 bg-black/30 rounded-lg px-3 py-1 text-white text-xs font-medium">
-                  {project.category}
+                  {project.sales}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Content Section */}
-          <div className={`space-y-6 ${isReversed ? "lg:col-start-1" : ""}`}>
+          <div className={`space-y-3 ${isReversed ? "lg:col-start-1" : ""}`}>
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
                 <Icon className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">{project.title}</h3>
+              
             </div>
+            <h4 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">{project.price}</h4>
+              <ul className="flex flex-wrap gap-2 mt-1">
+            {project.variants.map((variant: string, index: number) => (
+              <li
+                key={index}
+                className="px-3 py-1 border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded-md text-sm cursor-pointer 
+                          hover:bg-amber-500 hover:text-white hover:border-amber-500 
+                          transition-colors transition-border duration-200 ease-in-out"
+              >
+                {variant}
+              </li>
+            ))}
+          </ul>
 
+            <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">  
+            Ukuran: <span className="font-semibold">{project.size}</span>
+          </p>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{project.description}</p>
 
            <div className="flex flex-wrap gap-4">
   {/* Label Checkout */}
   <div className="flex items-center gap-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-2 rounded-full shadow-md">
     <FaShoppingCart className="w-4 h-4" />
-    <span className="font-semibold text-sm tracking-wide">Order via</span>
+    <span className="font-semibold text-sm tracking-wide">Order here</span>
   </div>
   {/* TikTok */}
   <a

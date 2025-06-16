@@ -108,7 +108,7 @@ const Testimonials = () => {
     {
       id: 1,
       name: "Idan W.",
-      quote: "Gurilem pedas sedang bener-bener pas di lidah! Renyah banget dan bumbunya nendang, cocok buat ngemil sambil nonton.",
+      quote: "Gurilem pedas sedang bener-bener pas di lidah! Renyah banget dan bumbunya nendang.",
       rating: 5,
       product: "Gurilem",
     },
