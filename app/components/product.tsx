@@ -308,7 +308,7 @@ const Product = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="product" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}

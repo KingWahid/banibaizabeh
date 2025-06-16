@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
   ]
 
   return (
-    <footer className="relative bg-white/10 dark:bg-black/20 backdrop-blur-xl border-t border-white/20 overflow-hidden">
+    <footer id="footer" className="scroll-mt-20 relative bg-white/10 dark:bg-black/20 backdrop-blur-xl border-t border-white/20 overflow-hidden">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}

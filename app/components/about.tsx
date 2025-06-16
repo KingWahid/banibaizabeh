@@ -521,7 +521,7 @@ const stats = [
 
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="about" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Enhanced Grid Background */}
       <GridPattern />
 

@@ -151,7 +151,7 @@ const Testimonials = () => {
 
   const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index }) => {
     return (
-      <div className="group">
+      <div className="group ">
         <div className="relative bg-white/10 dark:bg-white/5 border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/20">
           {/* Quote Icon */}
           <Quote className="absolute top-4 left-4 w-8 h-8 text-amber-500/50" />
@@ -193,7 +193,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="testimonial" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}

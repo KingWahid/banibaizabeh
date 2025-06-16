@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 // Interface untuk item menu
@@ -15,6 +16,8 @@ interface MenuItem {
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [activeMenu, setActiveMenu] = useState<string>("#home");
+
 
 
   useEffect(() => {
@@ -31,10 +34,12 @@ const NavigationBar = () => {
   };
 
   const menuItems: MenuItem[] = [
-    { name: "Home", href: "#", active: true },
-    { name: "Product", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Produk", href: "#product" },
+    { name: "Testimoni", href: "#testimonial" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Contact", href: "#footer" },
   ];
 
   return (
@@ -45,6 +50,7 @@ const NavigationBar = () => {
           : "bg-gradient-to-b from-black/10 to-transparent"
       }`}
     >
+
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo Section */}
@@ -80,28 +86,29 @@ const NavigationBar = () => {
             </div>
 
           {/* Desktop Menu */}
-          <div className="hidden space-x-1">
+          <div className="ml-auto hidden lg:flex space-x-1">
             {menuItems.map((item, index) => (
               <div
                 key={index}
                 className="relative group"
               >
-                <a
+                <Link
                   href={item.href}
+                  onClick={() => setActiveMenu(item.href)}
                   className={`flex items-center space-x-2 px-6 py-3 rounded-2xl text-sm font-medium transition-all duration-300 hover:scale-105 ${
-                    item.active
+                    item.href === activeMenu
                       ? "text-white bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg shadow-amber-500/30"
                       : "text-neutral-700 dark:text-neutral-300 hover:text-amber-500 hover:bg-white/20 backdrop-blur-sm"
                   }`}
                 >
                   <span>{item.name}</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
 
           {/* CTA and Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 lg:hidden">
             {/* Mobile Menu Button */}
             <button
               className="lg:hidden p-3 text-neutral-700 dark:text-white hover:bg-white/20 rounded-2xl transition-all duration-300 hover:scale-110"
@@ -125,8 +132,12 @@ const NavigationBar = () => {
               <a
                 key={index}
                 href={item.href}
+                onClick={() => {
+                  setActiveMenu(item.href); // Set active
+                  setIsOpen(false);         // Tutup menu
+                }}
                 className={`flex items-center justify-between p-4 rounded-2xl font-medium transition-all duration-300 hover:scale-[1.02] ${
-                  item.active
+                  item.href === activeMenu
                     ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/30"
                     : "text-neutral-700 dark:text-neutral-200 hover:bg-white/20 hover:text-amber-500"
                 }`}
