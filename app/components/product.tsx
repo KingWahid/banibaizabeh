@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Palette, LucideIcon, Flame, Drumstick, Leaf, Sandwich, Soup } from "lucide-react";
@@ -17,7 +17,7 @@ if (typeof window !== "undefined") {
 interface ProductItem {
   id: number;
   title: string;
-  price: string;
+  price: string[];
   description: string;
   image: string;
   icon: LucideIcon;
@@ -25,7 +25,7 @@ interface ProductItem {
   shoope: string;
   sales: string;
   variants: string[]; // contoh: ["Original", "Pedes Sedang", "Pedes Bingit"]
-  size: string;       // contoh: "250g"
+  size: string[];       // contoh: "250g"
 }
 
 // Interface untuk props ProjectCard
@@ -40,6 +40,7 @@ const Product = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const boxesRef = useRef<HTMLDivElement>(null);
+   
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -118,7 +119,7 @@ const Product = () => {
   {
     id: 1,
     title: "Basreng",
-    price: "Rp. 7000",
+    price: ["Rp7.000", "Rp33.000", "Rp60.000"],
     description:
       "Camilan khas Jawa Barat berbahan dasar bakso ikan atau ayam yang diiris tipis, digoreng kering hingga renyah, lalu dibumbui dengan rempah pedas yang khas.",
     image: "/basreng.jpeg",
@@ -127,12 +128,12 @@ const Product = () => {
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
     sales: "Best Seller",
     variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
-    size: "250g",
+    size: ["65g", "500g", "1kg"],
   },
   {
     id: 2,
     title: "Gurilem",
-    price: "Rp. 7000",
+    price: ["Rp7.000", "Rp33.000", "Rp60.000"],
     description:
       "Kerupuk gurih renyah berbahan tepung tapioka yang dibumbui khas. Nama 'Gurilem' adalah singkatan dari 'gurih dan pelem (lembut)', sesuai dengan rasa yang ditawarkan.",
     image: "/gurilem.jpeg",
@@ -141,12 +142,12 @@ const Product = () => {
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
     sales: "Best Seller",
     variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
-    size: "250g",
+    size: ["65g", "500g", "1kg"],
   },
   {
     id: 3,
     title: "Blaktek",
-    price: "Rp. 7000",
+    price: ["Rp7.000", "Rp33.000", "Rp60.000"],
     description:
       "Kombinasi unik dari seblak pedas dan lotek khas Jawa Barat. Cita rasa pedas dan gurih berpadu dalam hidangan yang kaya bumbu dan sayuran.",
     image: "/blaktek.jpeg",
@@ -155,12 +156,12 @@ const Product = () => {
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
     sales: "",
     variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
-    size: "250g",
+    size: ["65g", "500g", "1kg"],
   },
   {
     id: 4,
     title: "Lumpia",
-    price: "Rp. 7000",
+    price: ["Rp7.000", "Rp33.000", "Rp60.000"],
     description:
       "Camilan goreng dengan kulit lumpia renyah dan isian berbumbu rempah pedas yang menggoda. Cocok dinikmati kapan saja.",
     image: "/lumpiah.jpeg",
@@ -169,12 +170,12 @@ const Product = () => {
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
     sales: "",
     variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
-    size: "250g",
+    size: ["65g", "500g", "1kg"],
   },
   {
     id: 5,
     title: "Seblak level",
-    price: "Rp. 7000",
+    price: ["Rp7.000", "Rp33.000", "Rp60.000"],
     description:
       "Hidangan favorit Bandung dengan kerupuk bertekstur renyah, disajikan dalam berbagai level bumbu pedas gurih dengan aroma kencur yang kuat.",
     image: "/seblak.jpeg",
@@ -182,13 +183,19 @@ const Product = () => {
     tiktok: "https://www.tiktok.com/@produk8483_h?_t=ZS-8wNLoMYY6JG&_r=1",
     shoope: "https://id.shp.ee/YnfaZXp", // Tambahkan link jika tersedia
     sales: "",
-    variants: ["3", "7", "10"],
-    size: "250g",
+    variants: ["Original", "Pedes Sedang", "Pedes Bingit"],
+    size: ["65g", "500g", "1kg"],
   },
 ]
 
   const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, isReversed }) => {
-    const Icon = project.icon; // Komponen ikon dinamis
+    const [selectedSize, setSelectedSize] = useState(project.size[0]);
+    const [selectedVariant, setSelectedVariant] = useState<string>(project.variants[0]);
+
+
+  // Match selected size dengan harga (berdasarkan index)
+  const sizeIndex = project.size.indexOf(selectedSize);
+  const selectedPrice = project.price[sizeIndex];
 
     return (
       <div className="group">
@@ -228,30 +235,66 @@ const Product = () => {
           {/* Content Section */}
           <div className={`space-y-3 ${isReversed ? "lg:col-start-1" : ""}`}>
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                <Icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">{project.title}</h3>
-              
-            </div>
-            <h4 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">{project.price}</h4>
-              <ul className="flex flex-wrap gap-2 mt-1">
-            {project.variants.map((variant: string, index: number) => (
-              <li
-                key={index}
-                className="px-3 py-1 border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded-md text-sm cursor-pointer 
-                          hover:bg-amber-500 hover:text-white hover:border-amber-500 
-                          transition-colors transition-border duration-200 ease-in-out"
-              >
-                {variant}
-              </li>
-            ))}
-          </ul>
+        <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+          <project.icon className="w-6 h-6 text-white" />
+        </div>
+        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
+          {project.title}
+        </h3>
+      </div>
 
-            <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">  
-            Ukuran: <span className="font-semibold">{project.size}</span>
-          </p>
-            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{project.description}</p>
+      <h4 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
+        {selectedPrice}
+      </h4>
+
+      {/* Pilihan Variants */}
+<div className="flex items-center gap-4 mt-1">
+  <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+    Rasa:
+  </p>
+  <ul className="flex flex-wrap gap-2">
+    {project.variants.map((variant, index) => (
+      <li
+        key={index}
+        onClick={() => setSelectedVariant(variant)}
+        className={`px-3 py-1 rounded-md text-sm cursor-pointer border transition-all duration-200 ${
+          selectedVariant === variant
+            ? "bg-amber-500 text-white border-amber-500"
+            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-white border-neutral-300 dark:border-neutral-600 hover:bg-white/10 hover:border-amber-500"
+        }`}
+      >
+        {variant}
+      </li>
+    ))}
+  </ul>
+</div>
+
+
+      {/* Pilihan Ukuran */}
+     <div className="flex items-center gap-2 flex-wrap">
+  <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+    Ukuran:
+  </p>
+  <ul className="flex gap-2">
+    {project.size.map((size, index) => (
+      <li
+        key={index}
+        onClick={() => setSelectedSize(size)}
+        className={`px-3 py-1 rounded-md text-sm cursor-pointer border transition-all duration-200 ${
+          selectedSize === size
+            ? "bg-amber-500 text-white border-amber-500"
+            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-white border-neutral-300 dark:border-neutral-600 hover:bg-white/10 hover:border-amber-500"
+        }`}
+      >
+        {size}
+      </li>
+    ))}
+  </ul>
+</div>
+
+      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        {project.description}
+      </p>
 
            <div className="flex flex-wrap gap-4">
   {/* Label Checkout */}
