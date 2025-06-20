@@ -1,12 +1,6 @@
 
+import Hero from "../components/hero";
 
-import About from "./components/about";
-import Hero from "./components/hero";
-import Product from "./components/product";
-import NavigationBar from "./components/navigation-bar";
-import FAQ from "./components/faq";
-import Testimonials from "./components/testimonial";
-import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -22,14 +16,7 @@ export default function Home() {
         ></div>
       </div>
       {/* <Navbar /> */}
-      <NavigationBar />
       <Hero />
-      <About/>
-      <Product />
-      <Testimonials/>
-      <FAQ/>
-      <Footer/>
     </div>
-    
   );
 }

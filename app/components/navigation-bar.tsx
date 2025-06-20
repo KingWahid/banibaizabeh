@@ -34,12 +34,12 @@ const NavigationBar = () => {
   };
 
   const menuItems: MenuItem[] = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Produk", href: "#product" },
-    { name: "Testimoni", href: "#testimonial" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#footer" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Produk", href: "produk" },
+    { name: "Testimoni", href: "testimonial" },
+    { name: "FAQ", href: "faq" },
+    { name: "Contact", href: "contact" },
   ];
 
   return (

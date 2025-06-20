@@ -7,7 +7,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowUp,
   Heart,
   ExternalLink,
 } from "lucide-react"
@@ -85,11 +84,6 @@ const Footer: React.FC = () => {
       })
     }
   }, [])
-
-  const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
   const currentYear: number = new Date().getFullYear()
 
   const quickLinks: QuickLink[] = [
@@ -418,14 +412,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Back to Top Button */}
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 transition-all duration-300 hover:scale-110 hover:-translate-y-1 z-50"
-          aria-label="Back to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
+        
       </div>
     </footer>
   )
