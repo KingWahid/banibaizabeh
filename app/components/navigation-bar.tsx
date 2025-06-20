@@ -34,7 +34,7 @@ const NavigationBar = () => {
   };
 
   const menuItems: MenuItem[] = [
-    { name: "Home", href: "home" },
+    { name: "Home", href: "/" },
     { name: "About", href: "about" },
     { name: "Produk", href: "produk" },
     { name: "Testimoni", href: "testimonial" },
