@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -192,6 +193,16 @@ const Product = () => {
     const [selectedSize, setSelectedSize] = useState(project.size[0]);
     const [selectedVariant, setSelectedVariant] = useState<string>(project.variants[0]);
 
+  const trackViewProduct = (platform: string) => {
+  window.gtag?.('event', 'redirect_to_marketplace', {
+    event_category: 'product',
+    event_label: platform,
+    product_name: project.title,
+    variant: selectedVariant,
+    size: selectedSize,
+  });
+};
+
 
   // Match selected size dengan harga (berdasarkan index)
   const sizeIndex = project.size.indexOf(selectedSize);
@@ -305,18 +316,21 @@ const Product = () => {
   {/* TikTok */}
   <a
     href={project.tiktok}
-    target="_blank"
-    rel="noopener noreferrer"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => trackViewProduct('TikTok')}
     className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-black to-gray-800 text-white rounded-full shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 hover:scale-110"
   >
+    
     <FaTiktok className="w-5 h-5" />
   </a>
 
   {/* Shopee */}
   <a
     href={project.shoope}
-    target="_blank"
-    rel="noopener noreferrer"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => trackViewProduct('Shopee')}
     className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 transition-all duration-300 hover:scale-110"
   >
     <SiShopee className="w-5 h-5" />
@@ -325,8 +339,9 @@ const Product = () => {
   {/* Instagram */}
   <a
     href="https://www.instagram.com/produk8483_h?igsh=MTduNTdtMTFuaWFueg=="
-    target="_blank"
-    rel="noopener noreferrer"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => trackViewProduct('Instagram')}
     className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/40 transition-all duration-300 hover:scale-110"
   >
     <FaInstagram className="w-5 h-5" />
@@ -335,8 +350,9 @@ const Product = () => {
   {/* WhatsApp */}
   <a
     href="https://wa.me/+62881023261660"
-    target="_blank"
-    rel="noopener noreferrer"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => trackViewProduct('WhatsApp')}
     className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 hover:scale-110"
   >
     <FaWhatsapp className="w-5 h-5" />
