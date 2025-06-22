@@ -8,14 +8,9 @@ import {
   Phone,
   MapPin,
   Heart,
-  ExternalLink,
+
 } from "lucide-react"
 import { FaTiktok, FaShoppingCart} from "react-icons/fa"
-
-interface QuickLink {
-  name: string;
-  href: string;
-}
 
 interface SocialLink {
   name: string;
@@ -86,12 +81,6 @@ const Footer: React.FC = () => {
   }, [])
   const currentYear: number = new Date().getFullYear()
 
-  const quickLinks: QuickLink[] = [
-    { name: "Beranda", href: "#home" },
-    { name: "Tentang", href: "#about" },
-    { name: "Produk", href: "#produk" },
-    { name: "FAQ", href: "#faq" },
-  ]
 
   const socialLinks: SocialLink[] = [
     { name: "Shoope", icon: FaShoppingCart, href: "https://id.shp.ee/YnfaZXp", color: "hover:text-blue-400" },
@@ -350,34 +339,17 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">Menu</h4>
-            <ul className="space-y-4">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="group flex items-center space-x-2 text-neutral-600 dark:text-neutral-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors duration-300"
-                  >
-                    <span className="text-sm">{link.name}</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="w-full max-w-3xl h-[300px] md:h-[400px] overflow-hidden rounded-lg mx-auto">
+            <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Lokasi kami</h4>
             <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.668218131684!2d107.58665977403761!3d-7.048218069062604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68eb9c6336b641%3A0xbb2d36e7c72f8805!2sAlun%20Alun%20Banjaran%2C%20Banjaran%2C%20Kec.%20Banjaran%2C%20Kabupaten%20Bandung%2C%20Jawa%20Barat%2040377!5e0!3m2!1sid!2sid!4v1750133501497!5m2!1sid!2sid"
-            width="200%"
-            height="300"
+             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3959.479094762085!2d107.59421057499789!3d-7.070317292932357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDQnMTMuMSJTIDEwN8KwMzUnNDguNCJF!5e0!3m2!1sid!2sid!4v1750598862922!5m2!1sid!2sid"
+            className="w-full h-full border-0"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+          </div>
         </div>
         
 
