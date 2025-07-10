@@ -125,7 +125,7 @@ const FAQ: React.FC = () => {
   }
 
   return (
-    <section  ref={sectionRef} id="faq" className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden bg-white">
+    <section  ref={sectionRef} id="faq" className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden bg-[#F9E4BC]">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}

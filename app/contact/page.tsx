@@ -89,12 +89,12 @@ const Footer: React.FC = () => {
   ]
 
   return (
-    <footer id="footer" className="scroll-mt-20 relative bg-white/10 dark:bg-black/20 backdrop-blur-xl border-t border-white/20 overflow-hidden">
+    <footer id="footer" className="scroll-mt-20 relative bg-[#F9E4BC] backdrop-blur-xl border-t border-white/20 overflow-hidden">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.04] dark:opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(245, 158, 11, 0.2) 1px, transparent 1px),
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
 
         {/* Secondary Grid Pattern - Larger */}
         <div
-          className="absolute inset-0 opacity-[0.025] dark:opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(245, 158, 11, 0.15) 2px, transparent 2px),
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
 
         {/* Diagonal Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
               linear-gradient(45deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px),
@@ -312,27 +312,27 @@ const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">
+              <h3 className="text-2xl font-bold text-neutral-900 mb-4">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">
                  Banibaizabeh
                 </span>
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              <p className="text-neutral-600 leading-relaxed">
                 Menciptakan cemilan yang inovatif dengan kualitas tinggi untuk menemani setiap momen dan selera Anda.
               </p>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-neutral-600 dark:text-neutral-400">
+              <div className="flex items-center space-x-3 text-neutral-600 ">
                 <Mail className="w-4 h-4 text-amber-500" />
                 <span className="text-sm">cemilantssama@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-neutral-600 dark:text-neutral-400">
+              <div className="flex items-center space-x-3 text-neutral-600 ">
                 <Phone className="w-4 h-4 text-amber-500" />
                 <span className="text-sm">+62 881 0232 61660</span>
               </div>
-              <div className="flex items-center space-x-3 text-neutral-600 dark:text-neutral-400">
+              <div className="flex items-center space-x-3 text-neutral-600 ">
                 <MapPin className="w-4 h-4 text-amber-500" />
                 <span className="text-sm">Ciapus Banjaran, Indonesia</span>
               </div>
@@ -340,7 +340,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="w-full max-w-3xl h-[300px] md:h-[400px] overflow-hidden rounded-lg mx-auto">
-            <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Lokasi kami</h4>
+            <h4 className="text-lg font-semibold text-neutral-900 mb-2">Lokasi kami</h4>
             <iframe
              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3959.479094762085!2d107.59421057499789!3d-7.070317292932357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDQnMTMuMSJTIDEwN8KwMzUnNDguNCJF!5e0!3m2!1sid!2sid!4v1750598862922!5m2!1sid!2sid"
             className="w-full h-full border-0"
@@ -365,7 +365,7 @@ const Footer: React.FC = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className={`group p-3 bg-white/10 dark:bg-white/5 border border-white/20 rounded-xl text-neutral-600 dark:text-neutral-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+                    className={`group p-3 bg-white/10 border border-white/20 rounded-xl text-neutral-600 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5" />
@@ -376,7 +376,7 @@ const Footer: React.FC = () => {
             
 
             {/* Copyright */}
-            <div className="flex items-center space-x-2 text-neutral-600 dark:text-neutral-400 text-sm">
+            <div className="flex items-center space-x-2 text-neutral-600 text-sm">
               <span>© {currentYear} Made with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>by Banibaizabeh. All rights reserved.</span>

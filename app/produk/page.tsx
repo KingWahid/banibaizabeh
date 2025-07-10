@@ -214,7 +214,7 @@ const Product = () => {
           {/* Image Section */}
           <div className={`${isReversed ? "lg:col-start-2" : ""}`}>
             <div className="relative">
-              <div className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden bg-white/10 dark:bg-white/5 border border-white/20 shadow-lg">
+              <div className="relative h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden bg-[#F9E4BC] border border-white/20 shadow-lg">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -249,18 +249,18 @@ const Product = () => {
         <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
           <project.icon className="w-6 h-6 text-white" />
         </div>
-        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
+        <h3 className="text-xl md:text-2xl font-bold text-neutral-900">
           {project.title}
         </h3>
       </div>
 
-      <h4 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
+      <h4 className="text-xl md:text-2xl font-bold text-neutral-900">
         {selectedPrice}
       </h4>
 
       {/* Pilihan Variants */}
 <div className="flex items-center gap-4 mt-1">
-  <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+  <p className="text-sm font-medium text-neutral-700">
     Rasa:
   </p>
   <ul className="flex flex-wrap gap-2">
@@ -271,7 +271,7 @@ const Product = () => {
         className={`px-3 py-1 rounded-md text-sm cursor-pointer border transition-all duration-200 ${
           selectedVariant === variant
             ? "bg-amber-500 text-white border-amber-500"
-            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-white border-neutral-300 dark:border-neutral-600 hover:bg-white/10 hover:border-amber-500"
+            : "bg-neutral-100 text-neutral-700 border-neutral-300 hover:bg-white/10 hover:border-amber-500"
         }`}
       >
         {variant}
@@ -283,7 +283,7 @@ const Product = () => {
 
       {/* Pilihan Ukuran */}
      <div className="flex items-center gap-2 flex-wrap">
-  <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+  <p className="text-sm font-medium text-neutral-700">
     Ukuran:
   </p>
   <ul className="flex gap-2">
@@ -294,7 +294,7 @@ const Product = () => {
         className={`px-3 py-1 rounded-md text-sm cursor-pointer border transition-all duration-200 ${
           selectedSize === size
             ? "bg-amber-500 text-white border-amber-500"
-            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-white border-neutral-300 dark:border-neutral-600 hover:bg-white/10 hover:border-amber-500"
+            : "bg-neutral-100 text-neutral-700 border-neutral-300 hover:bg-white/10 hover:border-amber-500"
         }`}
       >
         {size}
@@ -303,7 +303,7 @@ const Product = () => {
   </ul>
 </div>
 
-      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <p className="text-neutral-600 leading-relaxed">
         {project.description}
       </p>
 
@@ -367,12 +367,12 @@ const Product = () => {
   };
 
   return (
-    <section id="product" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="product" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden bg-[#F9E4BC]">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
                 linear-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px),
@@ -384,7 +384,7 @@ const Product = () => {
 
         {/* Secondary Grid Pattern - Offset */}
         <div
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
                 linear-gradient(rgba(245, 158, 11, 0.1) 2px, transparent 2px),
@@ -468,15 +468,15 @@ const Product = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div ref={titleRef} className="text-center mb-16">
-          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 mb-6">
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 border border-amber-500/30 mb-6">
             <Palette className="w-4 h-4 mr-2" />
             Produk Kami
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
             Produk{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">Terbaik Kami</span>
           </h2>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto">
            Jelajahi koleksi camilan favorit yang siap menggoyang lidah di setiap gigitan.
           </p>
         </div>

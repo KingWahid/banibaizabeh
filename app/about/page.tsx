@@ -128,7 +128,7 @@ const StatCard = ({ stat, index}: StatCardProps) => {
       <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-red-500/20 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
       {/* Main card */}
-      <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 hover:border-amber-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/25 p-5 md:p-6 overflow-hidden">
+      <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 hover:border-amber-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/25 p-5 md:p-6 overflow-hidden">
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
           <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
@@ -164,10 +164,10 @@ const StatCard = ({ stat, index}: StatCardProps) => {
                 </div>
               )}
             </div>
-            <div className="text-sm md:text-base font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-300">
+            <div className="text-sm md:text-base font-medium text-neutral-800  group-hover:text-amber-600 transition-colors duration-300">
               {stat.label}
             </div>
-            <div className="text-xs text-neutral-600 dark:text-neutral-400 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+            <div className="text-xs text-neutral-600 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300">
               {stat.description}
             </div>
           </div>
@@ -188,17 +188,17 @@ const FeatureCard = ({ item, index }: FeatureCardProps) => {
       {/* Background glow */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <div className="relative flex gap-4 p-4 rounded-2xl bg-white/5 dark:bg-white/5 backdrop-blur-sm border border-white/10 hover:border-amber-500/20 transition-all duration-300 hover:transform hover:translate-x-2">
+      <div className="relative flex gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-amber-500/20 transition-all duration-300 hover:transform hover:translate-x-2">
         <div className="flex-shrink-0">
           <div className="w-12 h-12 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-md shadow-amber-500/20 group-hover:shadow-lg group-hover:shadow-amber-500/30 transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
             <Icon className="w-6 h-6 text-white" />
           </div>
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-300">
+          <h3 className="text-lg font-semibold text-neutral-900 mb-2 group-hover:text-amber-600 transition-colors duration-300">
             {item.title}
           </h3>
-          <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">{item.description}</p>
+          <p className="text-neutral-600 text-sm leading-relaxed">{item.description}</p>
         </div>
 
         {/* Arrow indicator */}
@@ -214,7 +214,7 @@ const GridPattern = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {/* Main grid pattern */}
     <div
-      className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      className="absolute inset-0 opacity-[0.03]"
       style={{
         backgroundImage: `
           linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px),
@@ -226,7 +226,7 @@ const GridPattern = () => (
 
     {/* Animated grid overlay */}
     <div
-      className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] animate-pulse"
+      className="absolute inset-0 opacity-[0.02] animate-pulse"
       style={{
         backgroundImage: `
           linear-gradient(rgba(249, 115, 22, 0.15) 1px, transparent 1px),
@@ -521,7 +521,7 @@ const stats = [
 
 
   return (
-    <section id="about" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="about" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden bg-[#F9E4BC]">
       {/* Enhanced Grid Background */}
       <GridPattern />
 
@@ -553,11 +553,11 @@ const stats = [
         {/* Header */}
         <div className="text-center mb-16 lg:mb-20">
           <div ref={titleRef} className="mb-4">
-            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 border border-amber-500/30 mb-6">
               <Zap className="w-4 h-4 mr-2" />
               Apa yang Kami Lakukan
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900">
               Solusi Ngemil{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">
                 Nikmat
@@ -567,13 +567,13 @@ const stats = [
 
           <p
             ref={subtitleRef}
-            className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto mb-6"
+            className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto mb-6"
           >
             Kami hadir dari filosofi bahwa kebahagiaan tidak selalu datang dari hal besar—kadang cukup dari sepotong kerupuk. Kami percaya bahwa dalam kesederhanaan, tersimpan rasa, kenangan, dan kebersamaan yang tak ternilai.
           </p>
 
           <div ref={descriptionRef} className="max-w-4xl mx-auto">
-            <p className="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="text-base text-neutral-600 leading-relaxed">
               Produk kami bukan sekadar cemilan. Ia adalah teman nonton, pelengkap ngobrol, dan penyatu momen kebersamaan. Dari tekstur renyah hingga rasa yang beragam—original, pedas, asin, hingga varian khas seperti basreng, gurilem, dan kerupuk—semua dibuat dengan sepenuh hati dan bahan berkualitas tinggi.
             </p>
           </div>
@@ -584,7 +584,7 @@ const stats = [
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:border-amber-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10"
+              className="group relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:border-amber-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10"
             >
               {/* Icon */}
               <div
@@ -594,13 +594,13 @@ const stats = [
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">{service.title}</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold text-neutral-900 mb-3">{service.title}</h3>
+              <p className="text-neutral-600 mb-6 leading-relaxed">{service.description}</p>
 
               {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+                  <li key={featureIndex} className="flex items-center text-sm text-neutral-600">
                     <CheckCircle className="w-4 h-4 text-amber-500 mr-2 flex-shrink-0" />
                     {feature}
                   </li>
@@ -628,17 +628,17 @@ const stats = [
             {/* Enhanced Left Column: Why Choose TooPay */}
             <div ref={whyToopayRef} className="space-y-8">
               <div>
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 mb-4">
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 border border-amber-500/30 mb-4">
                   <Star className="w-4 h-4 mr-2" />
                   Keunggulan Kami
                 </span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
                   Mengapa Harus{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">
                     Banibaizabeh?
                   </span>
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+                <p className="text-neutral-600 mb-8 leading-relaxed">
                   Kami berkomitmen untuk memberikan layanan terbaik dengan standar kualitas tertinggi. Berikut adalah
                   beberapa alasan mengapa pelanggan membeli produk Banibaizabeh:
                 </p>
@@ -656,8 +656,8 @@ const stats = [
             {/* Enhanced Right Column: Stats */}
             <div ref={statsRef} className="space-y-6">
               <div className="text-center mb-8">
-                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Kualitas Layanan Kami</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">Kualitas Layanan Kami</h3>
+                <p className="text-sm text-neutral-600 ">
                 </p>
               </div>
 

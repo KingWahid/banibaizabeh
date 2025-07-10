@@ -107,7 +107,7 @@ const Testimonials = () => {
   const TestimonialItems: TestimonialItem[] = [
     {
       id: 1,
-      name: "Idan W.",
+      name: "Mahmud N.",
       quote: "Gurilem pedas sedang bener-bener pas di lidah! Renyah banget dan bumbunya nendang.",
       rating: 5,
       product: "Gurilem",
@@ -142,7 +142,7 @@ const Testimonials = () => {
     },
     {
       id: 6,
-      name: "Wahidan N.",
+      name: "Jaka G",
       quote: "Gila sih, Pedesnya nampol! gurihnya bikin nagih. Baru buka satu, eh tau-tau abis sendiri 😭🔥 Wajib banget dicoba",
       rating: 5,
       product: "Blaktek",
@@ -152,7 +152,7 @@ const Testimonials = () => {
   const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, index }) => {
     return (
       <div className="group ">
-        <div className="relative bg-white/10 dark:bg-white/5 border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/20">
+        <div className="relative bg-white/10 border border-white/20 rounded-2xl p-6 md:p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/20">
           {/* Quote Icon */}
           <Quote className="absolute top-4 left-4 w-8 h-8 text-amber-500/50" />
 
@@ -164,8 +164,8 @@ const Testimonials = () => {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">{testimonial.name}</h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">{testimonial.product}</p>
+                  <h3 className="text-lg font-semibold text-neutral-900">{testimonial.name}</h3>
+                  <p className="text-sm text-neutral-600">{testimonial.product}</p>
                 </div>
               </div>
               {/* Rating Stars */}
@@ -180,7 +180,7 @@ const Testimonials = () => {
               </div>
             </div>
 
-            <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">{testimonial.quote}</p>
+            <p className="text-neutral-600 leading-relaxed">{testimonial.quote}</p>
           </div>
 
           {/* Decorative Number */}
@@ -193,12 +193,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonial" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden">
+    <section id="testimonial" ref={sectionRef} className="scroll-mt-20 py-20 md:py-24 lg:py-32 relative overflow-hidden bg-[#F9E4BC]">
       {/* Enhanced Background with Box Patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Main Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px),
@@ -210,7 +210,7 @@ const Testimonials = () => {
 
         {/* Secondary Grid Pattern - Offset */}
         <div
-          className="absolute inset-0 opacity-[0.朱2] dark:opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.朱2]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(245, 158, 11, 0.1) 2px, transparent 2px),
@@ -293,15 +293,15 @@ const Testimonials = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div ref={titleRef} className="text-center mb-16">
-          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 mb-6">
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-600 border border-amber-500/30 mb-6">
             <Quote className="w-4 h-4 mr-2" />
             Apa Kata Pelanggan
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
             Testimoni{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500">Pelanggan</span>
           </h2>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto">
             Dengar langsung dari pelanggan kami tentang pengalaman mereka menikmati camilan favorit kami.
           </p>
         </div>
