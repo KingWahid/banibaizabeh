@@ -153,28 +153,46 @@ const Testimonials = () => {
               onChange={(e) => setName(e.target.value)}
               className="p-3 border rounded-lg w-full"
             />
-            <input
-              type="text"
-              placeholder="Nama Produk"
+            <select
               value={product}
               onChange={(e) => setProduct(e.target.value)}
-              className="p-3 border rounded-lg w-full"
-            />
+              className="p-3 border rounded-lg w-full bg-white text-neutral-700"
+            >
+              <option value="">Pilih Produk</option>
+              <option value="Basreng">Basreng</option>
+              <option value="Gurilem">Gurilem</option>
+              <option value="Blaktek">Blaktek</option>
+              <option value="Lumpia">Lumpia</option>
+              <option value="Seblak">Seblak</option>
+            </select>
             <textarea
               placeholder="Tulis ulasan Anda"
               value={quote}
               onChange={(e) => setQuote(e.target.value)}
               className="p-3 border rounded-lg w-full"
             />
-            <input
-              type="number"
-              min={1}
-              max={5}
-              value={rating}
-              onChange={(e) => setRating(Number(e.target.value))}
-              className="p-3 border rounded-lg w-full"
-              placeholder="Rating (1-5)"
-            />
+            <div className="text-center">
+              <p className="text-sm font-medium text-neutral-700 mb-2">Nilai Produk</p>
+              <div className="flex justify-center items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    type="button"
+                    key={star}
+                    onClick={() => setRating(star)}
+                    className="focus:outline-none"
+                  >
+                    <Star
+                      className={`w-8 h-8 transition-colors ${
+                        rating >= star
+                          ? "text-amber-500 fill-amber-500"
+                          : "text-neutral-300"
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <button
               type="submit"
               className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-lg transition-all"
